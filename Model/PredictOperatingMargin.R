@@ -8,16 +8,18 @@ usePackage("curl")
 usePackage("ggplot2")
 usePackage("mrsdeploy")
 
+# Read data  
 x <- read.csv(curl("https://raw.githubusercontent.com/Prabhat-MSFT/PredictOperatingMargin/master/Data/TrainingData.csv"))
 head(x,5)
 
-
+# Create model  
 myModel <- rxGlm(Margin ~ TotalRooms
                 + NearestCompetition
                 + AnnualVisitors
                 + MedianIncome, data = x)
 
 
+# Wrap model in a R function
 CheckOperatingMargin <- function(i_totalrooms,i_nearestcompetition,i_annualvisitor,i_medianincome)
 {
   myInput <- data.frame(TotalRooms = i_totalrooms,
@@ -30,13 +32,13 @@ CheckOperatingMargin <- function(i_totalrooms,i_nearestcompetition,i_annualvisit
   margin <- prediction$Margin_Pred
 }
 
+# Validate R function
 print(CheckOperatingMargin(1000,5,500000, 75))
 
 remoteLogout()
 remoteLogin("http://40.86.94.151:12800", session = TRUE, diff = TRUE, commandline =  TRUE, 
             prompt = "REMOTE_TECHREADY>>>", username = "admin", password = "Audi@2015")
 pause()
-
 
 # Show API capabilities
 api$capabilities()
@@ -61,7 +63,6 @@ services
 
 #Generate swagger json file
 cat(api$swagger(), file = "C:/Users/azureuser/Documents/TechReady/WhereToOpenHotel/HotelOperatingMargin.json")
-
 cap <- api$capabilities()
 cap
 cap$swagger
