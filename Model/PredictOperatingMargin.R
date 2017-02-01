@@ -36,8 +36,8 @@ CheckOperatingMargin <- function(i_totalrooms,i_nearestcompetition,i_annualvisit
 print(CheckOperatingMargin(1000,5,500000, 75))
 
 remoteLogout()
-remoteLogin("http://40.86.94.151:12800", session = TRUE, diff = TRUE, commandline =  TRUE, 
-            prompt = "REMOTE_TECHREADY>>>", username = "admin", password = "Audi@2015")
+remoteLogin("http://[RSERVER IP]:12800", session = TRUE, diff = TRUE, commandline =  TRUE, 
+            prompt = "REMOTE_TECHREADY>>>", username = "", password = "")
 pause()
 
 # Show API capabilities
