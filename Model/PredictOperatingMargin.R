@@ -8,7 +8,7 @@ usePackage("curl")
 usePackage("ggplot2")
 usePackage("mrsdeploy")
 
-x <- read.csv(curl("https://raw.githubusercontent.com/Prabhat-MSFT/R-Server-Operationalization/master/TrainingData.csv"))
+x <- read.csv(curl("https://raw.githubusercontent.com/Prabhat-MSFT/PredictOperatingMargin/master/Data/TrainingData.csv"))
 head(x,5)
 
 
