@@ -62,7 +62,7 @@ services <- listServices()
 services
 
 #Generate swagger json file
-cat(api$swagger(), file = "C:/Users/azureuser/Documents/TechReady/WhereToOpenHotel/HotelOperatingMargin.json")
+cat(api$swagger(), file = "[SWAGGER_FILE_PATH]")
 cap <- api$capabilities()
 cap
 cap$swagger
