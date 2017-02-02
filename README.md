@@ -9,7 +9,7 @@ STEPS to use the code sample
 
     remoteLogin("http://[RSERVER IP]:12800", session = TRUE, diff = TRUE, commandline =  TRUE, prompt = "REMOTE_TECHREADY>>>", username =     "", password = "")
     
-3) Update SWAGGER_FILE_PATH token in Model/PredictOperatingMargin.R to store SWAGGER DOC in a local file system
+3) Update SWAGGER_FILE_PATH token in Model/PredictOperatingMargin.R to store SWAGGER DOC in a local file system. SWAGGER document relevant to the solution is checked-in at the top level of the file as HotelOperationgMargin.json
     
 4) Run Model/PredictOperatingMargin.R in R Studio. This will publish the required service to the R Sever in step 1.
 
