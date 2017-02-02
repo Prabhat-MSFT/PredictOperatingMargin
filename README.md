@@ -1,17 +1,17 @@
-# PredictOperatingMargin
+t# PredictOperatingMargin
 Demo of Operating Margin app to predict operating margin of a hotel - includes R Models, sample data script and VS solution for an MVC app.
 
 STEPS to use the code sample
 
-1) Configure one box operationalization set up of R Server using https://msdn.microsoft.com/en-us/microsoft-r/operationalize/configuration-initial. One box set up is simpler, though you can also try the enterprise set up.
+1) Configure one box operationalization set up of R Server using the instructions at https://msdn.microsoft.com/en-us/microsoft-r/operationalize/configuration-initial. One box set up is simpler, though you can also try the enterprise set up. 
 
-2) use  the IP of web node with port or the virual IP (in case of Load balancer) to update remote login credentials in Model/PredictOperatingMargin.R file. 
+2) use  the IP of web node with port or the virtual IP (in case of Load balancer) to update remote login credentials in Model/PredictOperatingMargin.R file. 
 
     remoteLogin("http://[RSERVER IP]:12800", session = TRUE, diff = TRUE, commandline =  TRUE, prompt = "REMOTE_TECHREADY>>>", username =     "", password = "")
     
 3) Update SWAGGER_FILE_PATH token in Model/PredictOperatingMargin.R to store SWAGGER DOC in a local file system. SWAGGER document relevant to the solution is checked-in at the top level of the file as HotelOperationgMargin.json
     
-4) Run Model/PredictOperatingMargin.R in R Studio. This will publish the required service to the R Sever in step 1.
+4) Run Model/PredictOperatingMargin.R in R Studio. This will publish the required service to the R Server in step 1.
 
 5) Connect VS to this github repository to pull the code locally. Build and run.
 
