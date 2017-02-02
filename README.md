@@ -1,4 +1,5 @@
-t# PredictOperatingMargin
+
+Upt# PredictOperatingMargin
 Demo of Operating Margin app to predict operating margin of a hotel - includes R Models, sample data script and VS solution for an MVC app.
 
 STEPS to use the code sample
@@ -13,7 +14,13 @@ STEPS to use the code sample
     
 4) Run Model/PredictOperatingMargin.R in R Studio. This will publish the required service to the R Server in step 1.
 
-5) Connect VS to this github repository to pull the code locally. Build and run.
+5) Connect VS to this github repository to pull the code locally. Update the web.config to have correct web node URL:Port, User name and Password.
+
+    <add key="WebNodeAddress" value="http://IPADDRESS:PORT"/>
+    <add key="WebNodeUserName" value="USERNAME"/>
+    <add key="WebNodePassword" value="PASSWORD"/>
+    
+Build and run.
 
 6) Alternatively you can regenerate the client code via AUTOREST from the created SWAGGER document - please review the instructions here https://msdn.microsoft.com/en-us/microsoft-r/operationalize/app-developer-get-started. You can update the generated client code in the VS solution for any update.
 
